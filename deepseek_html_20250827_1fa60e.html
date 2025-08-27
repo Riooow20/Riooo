@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hario Aditya Prianbodo - Link In Bio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+            color: white;
+        }
+        
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+        
+        .name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .description {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .links {
+            padding: 20px;
+        }
+        
+        .link-item {
+            display: flex;
+            align-items: center;
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .link-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .link-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f8f8f8;
+            color: #333;
+            font-size: 20px;
+        }
+        
+        .link-content {
+            padding: 15px;
+            flex: 1;
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .link-item:hover .link-content {
+            background: #000;
+            color: #fff;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f9f9f9;
+            color: #777;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 480px) {
+            .profile-img {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .name {
+                font-size: 20px;
+            }
+            
+            .link-content {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="header">
+            <img src="https://via.placeholder.com/150/ffcc80/000000?text=H" alt="Foto Profil" class="profile-img" id="profile-img">
+            <h1 class="name">Hario Aditya Prianbodo</h1>
+            <p class="description">Pelajar</p>
+        </div>
+        
+        <div class="links">
+            <div class="link-item" onclick="openLink('https://wa.me/6287824528594')">
+                <div class="link-icon">📱</div>
+                <div class="link-content">WA: +6287824528594</div>
+            </div>
+            
+            <div class="link-item" onclick="openLink('https://www.instagram.com/hario.aditya_')">
+                <div class="link-icon">📷</div>
+                <div class="link-content">IG: @hario.aditya_</div>
+            </div>
+            
+            <div class="link-item" onclick="openLink('https://www.tiktok.com/@rioow20')">
+                <div class="link-icon">🎵</div>
+                <div class="link-content">Tiktok: @rioow20</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            © 2025 - mybio
+        </div>
+    </div>
+
+    <script>
+        // Animasi fade-in saat halaman dimuat
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const container = document.getElementById('container');
+            setTimeout(() => {
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 100);
+        });
+        
+        // Fungsi untuk membuka link
+        function openLink(url) {
+            window.open(url, '_blank');
+        }
+        
+        // Simulasi pemuatan gambar dengan fallback
+        const profileImg = document.getElementById('profile-img');
+        profileImg.onerror = function() {
+            this.src = 'https://via.placeholder.com/150/ffcc80/000000?text=H';
+        };
+        profileImg.src = 'profil.png';
+    </script>
+</body>
+</html>
